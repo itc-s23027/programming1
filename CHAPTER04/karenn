@@ -1,0 +1,24 @@
+import calendar
+
+def create_september_calendar(year):
+    # 9月のカレンダーを作成
+    cal = calendar.monthcalendar(year, 9)
+    
+    # カレンダーのヘッダーを表示
+    print("  9月 " + str(year))
+    print("月 火 水 木 金 土 日")
+    
+    # カレンダーの日付を表示
+    for week in cal:
+        for day in week:
+            if day == 0:
+                # 日付が0の場合は空白を表示
+                print("   ", end="")
+            else:
+                # 日付を2桁で表示
+                print(f"{day:2} ", end="")
+        print()
+
+# 例として、2023年の9月のカレンダーを作成
+create_september_calendar(2023)
+
